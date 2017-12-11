@@ -34,6 +34,49 @@
                 <div class="col-5 align-self-center">
                     <p>Cat Clicks: <b id="clicks">0</b></p>
                 </div>
+
+            </div>
+            <div class="row">
+                <div class="col mb-5 align-self-center">
+                    <a role="button" id="admin" href="#" onclick="return octupus.toggleAdminView()" class="btn btn-warning">Admin</a>
+                </div>
+                <div id="adminView" class="container">
+                    <div class="row">
+                        <h3>Admin</h3>
+                    </div>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                                <label for="catName">Name: </label>
+                            </div>
+                            <div class="col-md">
+                                <input type="text" id="catName" name="catName" value="">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1">
+                                <label for="imgURL">ImgURL: </label>
+                            </div>
+                            <div class="col-md">
+                                <input type="text" id="imgURL" name="imgURL" value="">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1">
+                                <label for="noClicks">#Clicks: </label>
+                            </div>
+                            <div class="col-md">
+                                <input type="text" id="noClicks" name="noClicks" value="">
+                            </div>
+                        </div>
+                        <div class="row align-content-end">
+                            <div class="col-md">
+                                <a role="button" href="#" onclick="octupus.toggleAdminView()" class="btn btn-dark">Cancel</a>
+                                <a role="button" href="#" onclick="octupus.updateAdminData()" class="btn btn-danger">Save</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </main>
