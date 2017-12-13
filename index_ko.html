@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cat Clicker</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <ul id="cat-list" data-bind="foreach: currentCat().nicknames">
+        <li data-bind="text: $data"></li>
+    </ul>
+    <div id="cat" class="container">
+        <div class="row">
+            <div class="col-5">
+                <h2 id="cat-name" data-bind="text: currentCat().name"></h2>
+            </div>
+            <div class="col-5">
+                <h3 id="cat-nickname" data-bind="text: currentCat().title"></h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-5">
+                <div id="cat-count" data-bind="text: currentCat().clickCount"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <img id="cat-img" class="img-thumbnail" src="" alt="cute cat" data-bind="click: incrementCounter, attr: {src: currentCat().imgSrc}">
+            </div>
+        </div>
+
+    </div>
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script src="js/knockout-3.4.2.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
