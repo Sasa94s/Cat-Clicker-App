@@ -7,29 +7,35 @@
 
 </head>
 <body>
-    <ul id="cat-list" data-bind="foreach: currentCat().nicknames">
-        <li data-bind="text: $data"></li>
-    </ul>
-    <div id="cat" class="container">
+
+    <div id="cat" class="container" data-bind="with: currentCat">
+
+
         <div class="row">
             <div class="col-5">
-                <h2 id="cat-name" data-bind="text: currentCat().name"></h2>
+                <h2 id="cat-name" data-bind="text: name"></h2>
             </div>
             <div class="col-5">
-                <h3 id="cat-nickname" data-bind="text: currentCat().title"></h3>
+                <h3 id="cat-nickname" data-bind="text: title"></h3>
             </div>
         </div>
         <div class="row">
             <div class="col-5">
-                <div id="cat-count" data-bind="text: currentCat().clickCount"></div>
+                <div id="cat-count" data-bind="text: clickCount"></div>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <img id="cat-img" class="img-thumbnail" src="" alt="cute cat" data-bind="click: incrementCounter, attr: {src: currentCat().imgSrc}">
+                <img id="cat-img" class="img-thumbnail" src="" alt="cute cat" data-bind="click: $parent.incrementCounter, attr: {src: imgSrc}">
             </div>
         </div>
 
+        <div>
+            <h3>Nicknames:</h3>
+            <ul id="cat-list" data-bind="foreach: nicknames">
+                <li data-bind="text: $data"></li>
+            </ul>
+        </div>
     </div>
     <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="js/popper.min.js"></script>
